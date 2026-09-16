@@ -1,4 +1,4 @@
-# Shift Calendar
+# Shift and Water Calendar
 
 Лёгкое Android-приложение (Java, XML-layouts, без Jetpack Compose) для
 отслеживания циклического графика работы (например, 2/2) и события
