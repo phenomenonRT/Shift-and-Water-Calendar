@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ShiftCalendar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_turquoise</item>
+        <item name="colorPrimaryDark">@color/amoled_black</item>
+        <item name="colorAccent">@color/selected_blue</item>
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:statusBarColor">@color/amoled_black</item>
+        <item name="android:navigationBarColor">@color/amoled_black</item>
+        <item name="android:textColorPrimary">@color/text_white</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+        <!-- Тёмная тема для диалогов -->
+        <item name="alertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog</item>
+        <item name="android:datePickerDialogTheme">@style/Theme.MaterialComponents.DayNight.Dialog</item>
+    </style>
+</resources>

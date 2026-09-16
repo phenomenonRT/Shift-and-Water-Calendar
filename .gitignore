@@ -1,0 +1,48 @@
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+cmake-build-*/
+.navigation/
+
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Local configuration (SDK path, etc)
+local.properties
+
+# Log files
+*.log
+
+# Android profiling
+*.hprof
+
+# Captures and system files
+captures/
+.DS_Store
+Thumbs.db
+
+# APK / Bundle outputs
+*.apk
+*.ap_
+*.aab
+*.dex
+
+# Generated files
+app/src/main/generated/
+.cxx/
+.externalNativeBuild/
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Credentials (if any)
+*.jks
+*.keystore
+google-services.json

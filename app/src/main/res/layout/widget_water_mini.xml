@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/card_background"
+    android:backgroundTint="@color/surface_dark"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/widgetWaterPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/accent_turquoise"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:text="65%" />
+
+    <TextView
+        android:id="@+id/btnPlusWater"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/circle_ring_shift"
+        android:backgroundTint="@color/accent_turquoise"
+        android:gravity="center"
+        android:text="💧"
+        android:textSize="18sp" />
+
+</LinearLayout>

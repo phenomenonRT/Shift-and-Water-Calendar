@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shift Calendar</string>
+    <string name="events_title">События</string>
+    <string name="notes_title">Заметки</string>
+    <string name="events_hint">Нет предстоящих событий</string>
+    <string name="notes_hint">Заметок пока нет</string>
+    <string name="prev_month">Предыдущий месяц</string>
+    <string name="next_month">Следующий месяц</string>
+    <string name="settings">Настройки</string>
+    <string name="settings_title">Настройки графика</string>
+    <string name="cycle_label">Последовательность смен (через запятую)</string>
+    <string name="cycle_hint">Пример: У,У,_,_</string>
+    <string name="shift_types_edit_label">Предустановленные: У(☀️), Н(🌙), _(пропуск), Д(🌞), П(💧)</string>
+    <string name="start_date_label">Дата начала отсчёта: %1$s</string>
+    <string name="pick_start_date">Выбрать дату</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="widget_main">SC: Главный</string>
+    <string name="widget_water_2x2">💧 Вода</string>
+    <string name="widget_work_2x2">⚒️ Смена</string>
+    <string name="widget_water_2x1">💧 Вода</string>
+    <string name="widget_work_2x1">⚒️ Смена</string>
+    <string name="widget_clock_work">⏰💧 Часы+Смена</string>
+    <string name="widget_clock_water">⏰💧 Часы+Вода</string>
+    <string name="widget_water_4x1">💧 Вода</string>
+    <string name="widget_work_4x1">⚒️ Смена</string>
+
+    <string name="widget_all_in_one">⏰💼💧 День на ладони</string>
+    <string name="widget_work_efficiency">⏱️ Смена: Обратный отсчет</string>
+
+</resources>

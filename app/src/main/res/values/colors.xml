@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Фон AMOLED -->
+    <color name="amoled_black">#FF000000</color>
+    <color name="surface_dark">#FF121212</color>
+
+    <!-- Акценты -->
+    <color name="accent_turquoise">#FF1DE9B6</color>
+    <color name="selected_blue">#FF2979FF</color>
+    <color name="shift_outline_dark_red">#FFB71C1C</color>
+
+    <!-- Текст -->
+    <color name="text_white">#FFFFFFFF</color>
+    <color name="text_red_sunday">#FFFF5252</color>
+    <color name="text_dim">#FF6E6E6E</color>
+    <color name="text_secondary">#FFB0B0B0</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="ic_launcher_background">#FF000000</color>
+</resources>
