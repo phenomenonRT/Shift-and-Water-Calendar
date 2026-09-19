@@ -6,10 +6,12 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -99,8 +101,14 @@ public class MainActivity extends AppCompatActivity {
         updateWidget();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateWidget();
+    }
+
     private void buildWeekdayHeader() {
-        android.widget.LinearLayout header = findViewById(R.id.weekdayHeader);
+        LinearLayout header = findViewById(R.id.weekdayHeader);
         header.removeAllViews();
         DayOfWeek[] order = {
                 DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY,
@@ -109,14 +117,14 @@ public class MainActivity extends AppCompatActivity {
         for (DayOfWeek dow : order) {
             TextView tv = new TextView(this);
             tv.setText(dow.getDisplayName(TextStyle.SHORT, new Locale("ru")));
-            tv.setGravity(android.view.Gravity.CENTER);
+            tv.setGravity(Gravity.CENTER);
             tv.setTextSize(12f);
             tv.setPadding(0, 4, 0, 12);
             tv.setTextColor(getResources().getColor(
                     dow == DayOfWeek.SUNDAY ? R.color.text_red_sunday : R.color.text_dim));
 
-            android.widget.LinearLayout.LayoutParams lp = new android.widget.LinearLayout.LayoutParams(
-                    0, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
             tv.setLayoutParams(lp);
             header.addView(tv);
         }

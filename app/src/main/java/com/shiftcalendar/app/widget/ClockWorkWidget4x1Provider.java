@@ -33,7 +33,10 @@ public class ClockWorkWidget4x1Provider extends AppWidgetProvider {
         String action = intent.getAction();
         if (Intent.ACTION_DATE_CHANGED.equals(action) ||
                 Intent.ACTION_TIME_CHANGED.equals(action) ||
-                Intent.ACTION_TIMEZONE_CHANGED.equals(action)) {
+                Intent.ACTION_TIMEZONE_CHANGED.equals(action) ||
+                Intent.ACTION_USER_PRESENT.equals(action) ||
+                Intent.ACTION_BOOT_COMPLETED.equals(action) ||
+                "android.intent.action.QUICKBOOT_POWERON".equals(action)) {
 
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             ComponentName name = new ComponentName(context, getClass());

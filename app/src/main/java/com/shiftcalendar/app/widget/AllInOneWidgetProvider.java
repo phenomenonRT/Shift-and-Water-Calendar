@@ -33,7 +33,10 @@ public class AllInOneWidgetProvider extends AppWidgetProvider {
         String action = intent.getAction();
         if (Intent.ACTION_DATE_CHANGED.equals(action) ||
                 Intent.ACTION_TIME_CHANGED.equals(action) ||
-                Intent.ACTION_TIMEZONE_CHANGED.equals(action)) {
+                Intent.ACTION_TIMEZONE_CHANGED.equals(action) ||
+                Intent.ACTION_USER_PRESENT.equals(action) ||
+                Intent.ACTION_BOOT_COMPLETED.equals(action) ||
+                "android.intent.action.QUICKBOOT_POWERON".equals(action)) {
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             int[] ids = manager.getAppWidgetIds(new ComponentName(context, getClass()));
             onUpdate(context, manager, ids);
@@ -53,18 +56,21 @@ public class AllInOneWidgetProvider extends AppWidgetProvider {
         String shiftText = todayType.isWork() ? todayType.getIcon() + " " + todayType.getName() : "💤 Отдых";
         views.setTextViewText(R.id.widgetShiftStatus, shiftText);
 
-        // Вода
-        int current = prefs.getWaterMl();
-        int goal = prefs.getWaterGoal();
-        int percent = (goal > 0) ? (current * 100 / goal) : 0;
-        views.setTextViewText(R.id.widgetWaterText, "Вода: " + current + " / " + goal + " мл");
-        views.setProgressBar(R.id.widgetWaterProgress, 100, percent, false);
-
-        // Кнопка +250мл
-        Intent addWaterIntent = new Intent(context, ActionReceiver.class);
-        addWaterIntent.setAction(ActionReceiver.ACTION_ADD_WATER);
-        PendingIntent waterPi = PendingIntent.getBroadcast(context, 110, addWaterIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        views.setOnClickPendingIntent(R.id.btnPlusWater, waterPi);
+        // График воды
+        int daysToWater = -1;
+        for (int i = 0; i <= 60; i++) {
+            DayStatus s = ShiftCalculator.getStatus(config, today.plusDays(i));
+            if (s.isWaterDay()) {
+                daysToWater = i;
+                break;
+            }
+        }
+        
+        String scheduleText = (daysToWater == 0) ? "💧 Вода СЕГОДНЯ!" :
+                (daysToWater == 1) ? "💧 Вода завтра" :
+                        (daysToWater == -1) ? "💧 Нет данных" :
+                                "💧 Вода через " + daysToWater + " дн.";
+        views.setTextViewText(R.id.widgetWaterSchedule, scheduleText);
 
         // Клик по фону
         Intent mainIntent = new Intent(context, MainActivity.class);
